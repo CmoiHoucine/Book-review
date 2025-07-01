@@ -6,7 +6,7 @@ if (isset($_GET['query'])) {
     $query = htmlspecialchars($_GET['query']);
 
     // Recherche de livres
-    $stmtLivres = $bdd->prepare("SELECT id, titre FROM livres WHERE titre LIKE :query OR auteur = :query LIMIT 3");
+    $stmtLivres = $bdd->prepare("SELECT id, titre, couverture  FROM livres WHERE titre LIKE :query OR auteur = :query LIMIT 3");
     $stmtLivres->execute(['query' => '%' . $query . '%']);
     $livres = $stmtLivres->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,7 +18,12 @@ if (isset($_GET['query'])) {
     if (!empty($livres)) {
         echo "<h3>Livres trouvés</h3><ul>";
         foreach ($livres as $livre) {
-                        echo "<li><a href='../livre.php?id={$livre['id']}'>" . htmlspecialchars($livre['titre']) . "</a></li>";
+                       echo "<li>
+        <img src='{$livre['couverture']}' class='mini-couverture'>
+        <a href='../livre.php?id={$livre['id']}'>" . htmlspecialchars($livre['titre']) . "</a>
+      </li>";
+
+                        
 
         }
         echo "</ul>";
