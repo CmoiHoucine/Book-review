@@ -61,7 +61,6 @@ foreach ($data['items'] as $item) {
     $ajoutes++;
 }
 
-// Résumé final
 echo "\n--- Résumé de l'import ---\n";
 echo "Mot-clé utilisé : $motCle\n";
 echo "Livres ajoutés : $ajoutes\n";

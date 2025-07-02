@@ -1,7 +1,9 @@
 <?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
-
+<link rel="stylesheet" href="/Projet_web_de_con_la/css/style.css">
 <nav class="navbar">
-  <a href="/index.php">Accueil</a>
+  <a href="../View/index.php">Accueil</a>
+  
+
 
   <?php if (isset($_SESSION['username'])): ?>
     | <a href="../View/mon_profil.php">Mon profil</a>

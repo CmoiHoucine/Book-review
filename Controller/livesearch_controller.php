@@ -17,22 +17,21 @@ if (isset($_GET['query'])) {
 
     if (!empty($livres)) {
         echo "<h3>Livres trouvés</h3><ul>";
-        foreach ($livres as $livre) {
-                       echo "<li>
-        <img src='{$livre['couverture']}' class='mini-couverture'>
-        <a href='../livre.php?id={$livre['id']}'>" . htmlspecialchars($livre['titre']) . "</a>
+    foreach ($livres as $livre) {
+        echo "<li>
+       <a href=\"/Projet_web_de_con_la/Controller/livreController.php?id=" . $livre['id'] . "\">
+          <img src='" . htmlspecialchars($livre['couverture']) . "' class='mini-couverture'>
+          " . htmlspecialchars($livre['titre']) . "
+        </a>
       </li>";
-
-                        
-
-        }
+    }
         echo "</ul>";
     }
 
     if (!empty($utilisateurs)) {
         echo "<h3>Utilisateurs trouvés</h3><ul>";
         foreach ($utilisateurs as $utilisateur) {
-                        echo "<li><a href='../profil.php?id={$utilisateur['id']}'>" . htmlspecialchars($utilisateur['pseudo']) . "</a></li>";
+                        echo "<li><a href='../View/profil.php?id={$utilisateur['id']}'>" . htmlspecialchars($utilisateur['pseudo']) . "</a></li>";
 
         }
         echo "</ul>";
