@@ -85,6 +85,7 @@ CREATE TABLE `utilisateurs` (
 --
 -- Index pour la table `bibliotheques`
 --
+
 ALTER TABLE `bibliotheques`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_utilisateur` (`id_utilisateur`),
@@ -93,6 +94,7 @@ ALTER TABLE `bibliotheques`
 --
 -- Index pour la table `critiques`
 --
+
 ALTER TABLE `critiques`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_utilisateur` (`id_utilisateur`),

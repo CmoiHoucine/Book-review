@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>Document</title>
 </head>
 <body>
+    <?php include '../Includes/nav.php'; ?>
+
     <form action="../Controller/RegisterController.php" method="post">
     <h1>Inscription</h1>
     <label for="username">Nom d'utilisateur:</label>
