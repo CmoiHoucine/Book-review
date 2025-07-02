@@ -2,12 +2,12 @@
 
 <nav class="navbar">
   <div class="nav-links">
-    <a href="/index.php">Accueil</a>
+    <a href="../Controller/IndexController.php">Accueil</a>
 
     <?php if (isset($_SESSION['username'])): ?>
       <a href="../View/mon_profil.php">Mon profil</a>
       <a href="../View/ajouter_livre.php">Ajouter un livre</a>
-      <a href="../Controller/LogoutController.php">Déconnexion</a>
+      <a href="LogoutController.php">Déconnexion</a>
     <?php else: ?>
       <a href="../View/login.php">Connexion</a>
       <a href="../View/register.php">Inscription</a>

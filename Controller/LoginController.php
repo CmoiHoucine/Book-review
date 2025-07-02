@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($requete && password_verify($password, $requete['mdp'])) {
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: ../View/index.php");
+            header("Location: IndexController.php");
             exit();
         } else {
             echo "❌ Nom d'utilisateur ou mot de passe incorrect.";

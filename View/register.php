@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="auth-body">
     <?php include '../Includes/nav.php'; ?>
 
     <form action="../Controller/RegisterController.php" method="post">

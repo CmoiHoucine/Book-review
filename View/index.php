@@ -1,6 +1,8 @@
 
 <?php
-            session_start();
+           if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
            
 ?>
  <!DOCTYPE html>
@@ -12,26 +14,29 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include '../Includes/nav.php'; ?>
-    <h1>BookReview</h1>
-    <p>Le but de ce site est de crée une plateforme communautaire ou les gens peuvent ajouter des livres qu'ils ont lu et leur mettre une review </p>
-    
 
+<div class="section-derniers-livres">
+  <h2>📚 Livres les plus récents</h2>
 
+  <div class="liste-derniers-livres">
+    <?php foreach ($RequiredBooks as $livre): ?>
+      <div class="livre-card">
+        <div class="flip-card">
+          <div class="flip-card-inner">
 
+            <div class="flip-card-front">
+              <img src="<?= htmlspecialchars($livre['couverture']) ?>" alt="Couverture">
+            </div>
 
+            <div class="flip-card-back">
+              <h4><?= htmlspecialchars($livre['titre']) ?></h4>
+              <p><?= substr(htmlspecialchars($livre['resumer']), 0, 150) . '...' ?></p>
+              <a href="/Projet_web_de_con_la/Controller/livreController.php?id=<?= $livre['id'] ?>">Voir plus</a>
+            </div>
 
-
-
-
-
- 
-</body>
-</html>
-<?php
-
-
-
-
-?>
- 
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div>
