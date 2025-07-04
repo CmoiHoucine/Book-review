@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         fetch('../Controller/livesearch_controller.php?query=' + encodeURIComponent(query))
-            .then(response => response.text())
+            .then(response => response.text())  
             .then(data => {
                 resultsContainer.innerHTML = data;
             })

@@ -1,5 +1,5 @@
 <?php
-require_once '../model/database.php'; // ou ajuste le chemin selon ton arborescence
+require_once '../model/database.php'; 
 $bdd = getDatabaseConnection();
 
 $id = $_GET['id'] ?? null;

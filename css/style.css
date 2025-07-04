@@ -184,14 +184,17 @@ h1, h2, h3 {
 }
 #search-results {
   transition: all 0.25s ease;
-}
+}/* Partie formulaire d'authentification (connexion/inscription) */
 .auth-body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f0f5;
+  color: #5c5552;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-top: 80px; /* pour compenser la navbar fixe */
-  background-color: #f7f0f5;
+  padding-top: 100px; /* Laisse la place à la navbar */
+  margin: 0;
 }
 
 form {
@@ -369,3 +372,21 @@ button[type="submit"]:hover {
 .flip-card-back a:hover {
   background-color: #5c5552;
 }
+/* Message d'erreur pour login */
+.form-error {
+  background-color: #ffe6e6;
+  border: 1px solid #ff9999;
+  color: #b30000;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 auto 20px auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(179, 0, 0, 0.1);
+  display: none;
+}
+
+.form-error.show {
+  display: block;

@@ -39,6 +39,7 @@ foreach ($data['items'] as $item) {
         continue;
     }
 
+//charger les livres en debut de script je les met dans un tableau et ici je check dans le tableau au lieu de chechez dans la bdd
     $check = $bdd->prepare("SELECT COUNT(*) FROM livres WHERE isbn = ?");
     $check->execute([$isbn]);
     if ($check->fetchColumn() > 0) {
@@ -60,7 +61,7 @@ foreach ($data['items'] as $item) {
     echo " Livre ajouté : $titre ($isbn)\n";
     $ajoutes++;
 }
-
+//faire un fopen pour recuperer les info faire un path vers le projet 
 echo "\n--- Résumé de l'import ---\n";
 echo "Mot-clé utilisé : $motCle\n";
 echo "Livres ajoutés : $ajoutes\n";
